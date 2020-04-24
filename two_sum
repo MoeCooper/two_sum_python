@@ -1,0 +1,17 @@
+def two_sum(arr, targetSum):
+  arr.sort()
+
+  left = 0
+  right = len(arr) - 1
+
+  while left < right:
+    combinedSum = arr[left] + arr[right]
+    if combinedSum == targetSum:
+      return [ arr[left], arr[right]]
+    elif combinedSum < targetSum:
+      left += 1
+    elif combinedSum > targetSum:
+      right -= 1
+  return []
+
+print(two_sum([1,2,3,3], 6))
